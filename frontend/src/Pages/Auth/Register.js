@@ -57,7 +57,8 @@ const Register = () => {
     e.preventDefault();
 
       const {name, email, password} = values;
-
+      console.log(name);
+      console.log(email);
       setLoading(false);
      
       const {data} = await axios.post(registerAPI, {
@@ -65,7 +66,7 @@ const Register = () => {
         email,
         password
       });
-
+      console.log(data)
       if(data.success === true){
         delete data.user.password;
         localStorage.setItem("user", JSON.stringify(data.user));

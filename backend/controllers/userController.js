@@ -1,11 +1,14 @@
 import User from "../models/UserSchema.js";
 import bcrypt from "bcrypt";
 
+
+
 export const registerControllers = async (req, res, next) => {
+    
     try{
         const {name, email, password} = req.body;
 
-        // console.log(name, email, password);
+        console.log(name, email, password);
 
         if(!name || !email || !password){
             return res.status(400).json({
